@@ -15,6 +15,9 @@ const Table = () => {
       let response = await fetchData();
       //   console.log(response);
       setEmployeesList(response);
+      //   let totalPages = Math.ceil(employeesList.length / employeesPerPage);
+      //   console.log(totalPages);
+      //   setMaxPages(totalPages);
     } catch (error) {
       console.log("failed to fetch data");
     }
