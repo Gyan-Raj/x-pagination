@@ -26,14 +26,16 @@ const Table = () => {
     fetchedData();
   }, []);
   useEffect(() => {
-    let totalPages = Math.ceil(employeesList.length / employeesPerPage);
+    let totalPages = Math.ceil(
+      employeesList && employeesList.length / employeesPerPage
+    );
     console.log(totalPages);
     setMaxPages(totalPages);
   }, [employeesList]);
   let filteredData = (employeesList, pageNo) => {
     let startIndex = (pageNo - 1) * employeesPerPage;
     let endIndex = startIndex + employeesPerPage;
-    return employeesList.slice(startIndex, endIndex);
+    return employeesList && employeesList.slice(startIndex, endIndex);
   };
   let list = filteredData(employeesList, pageNo);
 
