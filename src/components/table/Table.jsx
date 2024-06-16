@@ -19,7 +19,7 @@ const Table = () => {
       //   console.log(totalPages);
       //   setMaxPages(totalPages);
     } catch (error) {
-      console.log("failed to fetch data");
+      alert("failed to fetch data");
     }
   };
   useEffect(() => {

@@ -7,6 +7,6 @@ export const fetchData = async () => {
     // console.log(response);
     return response.data;
   } catch (error) {
-    console.log("failed to fetch data");
+    alert("failed to fetch data");
   }
 };
