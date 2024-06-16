@@ -1,0 +1,34 @@
+table {
+  height: 70vh;
+  width: 100%;
+  /* border: 1px solid red; */
+  font-size: 0.8rem;
+  /* border-collapse: collapse; */
+  padding: 5px;
+}
+thead {
+  height: 8%;
+  width: 100%;
+  background-color: green;
+  color: white;
+  text-align: left;
+}
+tbody {
+  text-align: left;
+}
+.colOne {
+  width: 10%;
+}
+.colTwo {
+  width: 25%;
+}
+.colThree {
+  width: 40%;
+}
+.colFour {
+  width: 25%;
+}
+/* th {
+  padding: 0;
+  border: 1px;
+} */
