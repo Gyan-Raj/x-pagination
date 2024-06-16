@@ -9,15 +9,12 @@ const Table = () => {
   const [pageNo, setPageNo] = useState(1);
   let [employeesList, setEmployeesList] = useState([]);
   let [maxPages, setMaxPages] = useState(1);
-  //   let employeesPerPage = 10;
+  let employeesPerPage = 10;
   let fetchedData = async () => {
     try {
       let response = await fetchData();
       //   console.log(response);
       setEmployeesList(response);
-      let totalPages = Math.ceil(employeesList.length / 10);
-      console.log(totalPages);
-      setMaxPages(totalPages);
     } catch (error) {
       console.log("failed to fetch data");
     }
@@ -25,9 +22,14 @@ const Table = () => {
   useEffect(() => {
     fetchedData();
   }, []);
+  useEffect(() => {
+    let totalPages = Math.ceil(employeesList.length / employeesPerPage);
+    console.log(totalPages);
+    setMaxPages(totalPages);
+  }, [employeesList]);
   let filteredData = (employeesList, pageNo) => {
-    let startIndex = (pageNo - 1) * 10;
-    let endIndex = startIndex + 10;
+    let startIndex = (pageNo - 1) * employeesPerPage;
+    let endIndex = startIndex + employeesPerPage;
     return employeesList.slice(startIndex, endIndex);
   };
   let list = filteredData(employeesList, pageNo);
